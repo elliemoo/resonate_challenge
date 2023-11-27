@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  Stack,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import DetailCard from "../component/DetailCard";
 import ContactList from "../component/ContactList";
 import { useState } from "react";
@@ -36,7 +30,7 @@ const Home = () => {
             >
               {/* contact search bar */}
               {/* list of contacts  */}
-              <ContactList onContactClick={handleContactClick} />
+              <ContactList onContactSelected={handleContactClick} />
             </Box>
             <Box
               sx={{
