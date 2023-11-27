@@ -4,8 +4,9 @@ import ContactList from "../component/ContactList";
 import { useState } from "react";
 
 const Home = () => {
+  // state for keep track of selected contact object, it will be parsed to detail component
   const [selectedContact, setSelectedContact] = useState(null);
-
+  // handling click
   const handleContactClick = (contact) => {
     setSelectedContact(contact);
   };
@@ -28,8 +29,7 @@ const Home = () => {
                 borderBottomLeftRadius: "7px",
               }}
             >
-              {/* contact search bar */}
-              {/* list of contacts  */}
+              {/* contact search bar  + list of contacts  */}
               <ContactList onContactSelected={handleContactClick} />
             </Box>
             <Box

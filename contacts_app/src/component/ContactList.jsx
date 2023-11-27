@@ -7,7 +7,7 @@ const ContactList = ({ onContactSelected }) => {
   const [activeButton, setActiveButton] = useState(null);
   const [searchValue, setSearchValue] = useState("");
 
-  // Handling when contact is clicked
+  // Handling when contact is clicked within this componenet
   const contactClicked = (buttonID) => {
     setActiveButton((prevActiveButton) =>
       prevActiveButton === buttonID ? null : buttonID
@@ -75,7 +75,6 @@ const ContactList = ({ onContactSelected }) => {
         <Box
           sx={{
             p: 1,
-            m: 1.5,
 
             borderRadius: "7px",
           }}
@@ -86,7 +85,10 @@ const ContactList = ({ onContactSelected }) => {
             contactClicked(contact.id);
           }}
         >
-          <Typography variant="body2" sx={{ p: 1 }}>
+          <Typography
+            variant="body2"
+            sx={{ p: 0.5, fontSize: { xs: "15p", sm: "1.2rem" } }}
+          >
             {contact.name}
           </Typography>
         </Box>
