@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import GoogleMap from "google-maps-react-markers";
 
@@ -10,17 +10,15 @@ const Marker = () => (
 
 const MapView = (props) => {
   return (
-    <Container>
-      <div style={{ height: "30vh", width: "100%" }}>
-        <GoogleMap
-          apiKey="AIzaSyCS5FO2qTANmhkGiHjEIoetzFF__m-6R3Y"
-          defaultCenter={props.geo}
-          defaultZoom={0}
-        >
-          <Marker lat={props.geo.lat} lng={props.geo.lng} />
-        </GoogleMap>
-      </div>
-    </Container>
+    <Box sx={{ height: "30vh", width: "100%" }}>
+      <GoogleMap
+        apiKey="AIzaSyCS5FO2qTANmhkGiHjEIoetzFF__m-6R3Y"
+        defaultCenter={props.geo}
+        defaultZoom={0}
+      >
+        <Marker lat={props.geo.lat} lng={props.geo.lng} />
+      </GoogleMap>
+    </Box>
   );
 };
 
