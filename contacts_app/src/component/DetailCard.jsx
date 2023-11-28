@@ -10,12 +10,19 @@ import {
 import { Person } from "@mui/icons-material";
 
 import ContactButtons from "./ContactButtons";
+import MapView from "./MapView";
+
 //  name, email,address,phone,compnay
 
 const DetailCard = ({ selectedContact }) => {
+  const geo = selectedContact && {
+    lat: Number(selectedContact.address.geo.lat),
+    lng: Number(selectedContact.address.geo.lng),
+  };
+
   return (
     <Box sx={{ height: "100%" }}>
-      {selectedContact ? (
+      {selectedContact && geo ? (
         <Container sx={{ p: 3, height: "100%" }}>
           <Card sx={{ p: 3, height: "100%" }}>
             <Stack sx={{ alignItems: "center" }}>
@@ -36,10 +43,8 @@ const DetailCard = ({ selectedContact }) => {
                   {selectedContact.address.street}{" "}
                   {selectedContact.address.city}
                 </Typography>
-                {/* <Typography color="textSecondary">
-              Company: {selectedContact.company}
-            </Typography> */}
               </CardContent>
+              <MapView geo={geo} />
             </Stack>
           </Card>
         </Container>
